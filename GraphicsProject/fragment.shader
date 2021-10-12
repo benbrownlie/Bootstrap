@@ -22,6 +22,19 @@ void main() {
 	vec3 kNormal = normalize(fNormal.xyz);
 	vec3 iNormal = normalize(iDirection);
 
+	//Snow
+	if (kNormal.y > 0.5f)
+	{
+		vec4 red = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+		pColor = red;
+	}
+
+	if (pColor.g > 0.5f)
+	{
+		pColor.b = pColor.g;
+		pColor.g = pColor.g / 2.0f;
+	}
+
 	//Calculate ambient color
 	vec3 ambientColor = (fColor.xyz + kAmbient) * iAmbient;
 

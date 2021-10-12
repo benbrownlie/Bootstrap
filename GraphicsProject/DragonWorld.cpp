@@ -21,7 +21,15 @@ void DragonWorld::onStart()
 	//Dragon
 	m_dragon = new OBJMesh();
 	m_dragon->load("Dragon.obj");
+	m_dragon->getTransform()->setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+	m_dragon->getTransform()->setScale(glm::vec3(0.2f));
 	add(m_dragon);
+
+	//Cube
+	//m_cube = new Cube();
+	//m_cube->setColor(glm::vec4(0.8f, 0.2f, 0.4f, 1.0f));
+	//add(m_cube);
+
 }
 
 void DragonWorld::onEnd()
@@ -29,4 +37,5 @@ void DragonWorld::onEnd()
 	destroy(m_camera);
 	destroy(m_light);
 	destroy(m_dragon);
+	destroy(m_cube);
 }
