@@ -135,16 +135,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="Bunny.obj">
+    <CopyFileToFolders Include="Lucy.obj">
       <Filter>Resource Files</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="Buddha.obj">
       <Filter>Resource Files</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="Dragon.obj">
+    <CopyFileToFolders Include="Bunny.obj">
       <Filter>Resource Files</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="Lucy.obj">
+    <CopyFileToFolders Include="Dragon.obj">
       <Filter>Resource Files</Filter>
     </CopyFileToFolders>
   </ItemGroup>
