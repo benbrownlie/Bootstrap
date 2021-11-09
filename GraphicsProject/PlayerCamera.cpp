@@ -22,6 +22,10 @@ void PlayerCamera::onUpdate(float deltaTime)
         //Move forward
         getTransform()->translate(forward * m_moveSpeed * (float)deltaTime);
     }
+    if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT))
+    {
+        m_moveSpeed = m_sprintSpeed;
+    }
     if (glfwGetKey(window, keyBack)) {
         //Move back
         getTransform()->translate(-forward * m_moveSpeed * (float)deltaTime);

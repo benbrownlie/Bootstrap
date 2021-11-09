@@ -11,7 +11,7 @@ void DragonWorld::onStart()
 
 	//Light
 	m_light = new Light(
-		{1.0f, 1.0f, 1.0f},
+		{1.0f, -1.0f, 1.0f},
 		{0.5f, 0.5f, 0.5f, 1.0f},
 		{1.0f, 1.0f, 1.0f, 1.0f},
 		{1.0f, 1.0f, 1.0f, 1.0f}
@@ -29,7 +29,7 @@ void DragonWorld::onStart()
 	m_cube = new Cube();
 	m_cube->setColor(glm::vec4(0.8f, 0.2f, 0.4f, 1.0f));
 	m_cube->getTransform()->setPosition(glm::vec3(4.0f, -3.0f, 0.0f));
-	add(m_cube);
+	//add(m_cube);
 
 }
 
@@ -38,5 +38,5 @@ void DragonWorld::onEnd()
 	destroy(m_camera);
 	destroy(m_light);
 	destroy(m_dragon);
-	destroy(m_cube);
+	//destroy(m_cube);
 }

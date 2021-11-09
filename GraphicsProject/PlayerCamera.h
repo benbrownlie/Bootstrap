@@ -11,6 +11,7 @@ public:
 
 private:
 	float m_moveSpeed = 1.0f;
+	float m_sprintSpeed = 3.0f;
 	float m_lookSpeed = 1.0f;
 
 	double m_currentMouseX = 0.0;

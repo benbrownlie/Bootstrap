@@ -13,7 +13,7 @@ public:
 
 private:
 	PlayerCamera* m_camera = nullptr;
-	Light* m_light = nullptr;
+	Light* m_light;
 	OBJMesh* m_dragon = nullptr;
 	Cube* m_cube = nullptr;
 };
