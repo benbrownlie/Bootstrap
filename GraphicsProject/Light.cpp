@@ -1,5 +1,6 @@
 #include "Light.h"
 #include "gl_core_4_4.h"
+#include <string>
 
 Light::Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular)
 {
@@ -11,6 +12,18 @@ Light::Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec
 
 void Light::onDraw()
 {
+	//Checks the bounds of the array
+	if (m_index < 0)
+	{
+		printf("Light::setindex less than zero");
+		return;
+	}
+	else if (m_index > 2)
+	{
+		printf("Light::setIndex exceeds maximum of 2");
+		return;
+	}
+
 	int program = -1;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &program);
 
@@ -19,10 +32,22 @@ void Light::onDraw()
 		return;
 	}
 
-	int lightDirection = glGetUniformLocation(program, "iDirection");
-	int lightAmbient = glGetUniformLocation(program, "iAmbient");
-	int lightDiffuse = glGetUniformLocation(program, "iDiffuse");
-	int lightSpecular = glGetUniformLocation(program, "iSpecular");
+	int lightDirection = 0;
+	int lightAmbient = 0;
+	int lightDiffuse = 0;
+	int lightSpecular = 0;
+
+	std::string string = ("iDirection" + std::to_string(m_index));
+	lightDirection = glGetUniformLocation(program, string.c_str());
+
+	string = ("iAmbient" + std::to_string(m_index));
+	lightAmbient = glGetUniformLocation(program, string.c_str());
+
+	string = ("iDiffuse" + std::to_string(m_index));
+	lightDiffuse = glGetUniformLocation(program, string.c_str());
+
+	string = ("iSpecular" + std::to_string(m_index));
+	lightSpecular = glGetUniformLocation(program, string.c_str());
 
 	if (lightDirection >= 0) {
 		glm::vec3 direction = getDirection();
