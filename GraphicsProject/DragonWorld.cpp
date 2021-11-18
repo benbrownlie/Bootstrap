@@ -36,12 +36,15 @@ void DragonWorld::onStart()
 	m_dragon->getTransform()->setScale(glm::vec3(0.2f));
 	add(m_dragon);
 
+	//Quad
+	m_quad = new Quad({ 0.25, 0.25, 0.25, 1 }, "earth_diffuse.jpg");
+	m_quad->getTransform()->setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+	add(m_quad);
+
 	//Cube
 	m_cube = new Cube();
 	m_cube->setColor(glm::vec4(0.8f, 0.2f, 0.4f, 1.0f));
 	m_cube->getTransform()->setPosition(glm::vec3(4.0f, -3.0f, 0.0f));
-	//add(m_cube);
-
 }
 
 void DragonWorld::onEnd()
@@ -50,5 +53,5 @@ void DragonWorld::onEnd()
 	destroy(m_light1);
 	destroy(m_light2);
 	destroy(m_dragon);
-	//destroy(m_cube);
+	destroy(m_quad);
 }

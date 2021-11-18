@@ -1,11 +1,16 @@
 #pragma once
 #include "Mesh.h"
+#include "Texture.h"
 
 class Quad : public Mesh
 {
 public:
 	Quad() : Mesh() {}
 	Quad(glm::vec4 color);
+	Quad(glm::vec4 color, const char* filepath);
+
+	void onStart() override;
+	void onDraw() override;
 
 	Vertex* generateVertices(unsigned int& vertexCount) override;
 	unsigned int* generateIndices(unsigned int& indexCount) override;
@@ -15,5 +20,7 @@ public:
 
 private:
 	glm::vec4 m_color = glm::vec4(1.0f);
+	const char* m_file = nullptr;
+	aie::Texture m_texture;
 };
 
