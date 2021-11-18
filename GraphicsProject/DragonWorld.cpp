@@ -37,7 +37,7 @@ void DragonWorld::onStart()
 	add(m_dragon);
 
 	//Quad
-	m_quad = new Quad({ 0.25, 0.25, 0.25, 1 }, "earth_diffuse.jpg");
+	m_quad = new Quad("earth_diffuse.jpg", { 0.25, 0.25, 0.25, 1 });
 	m_quad->getTransform()->setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
 	add(m_quad);
 

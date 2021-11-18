@@ -6,8 +6,7 @@ class Quad : public Mesh
 {
 public:
 	Quad() : Mesh() {}
-	Quad(glm::vec4 color);
-	Quad(glm::vec4 color, const char* filepath);
+	Quad(const char* filepath, glm::vec4 color);
 
 	void onStart() override;
 	void onDraw() override;

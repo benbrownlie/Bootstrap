@@ -1,15 +1,10 @@
 #include "Quad.h"
 #include "gl_core_4_4.h"
 
-Quad::Quad(glm::vec4 color) : Quad::Quad()
+Quad::Quad(const char* filepath, glm::vec4 color) : Quad::Quad()
 {
+	m_file = filepath;
 	m_color = color;
-}
-
-Quad::Quad(glm::vec4 color, const char* file) : Quad::Quad()
-{
-	m_color = color;
-	m_file = file;
 }
 
 void Quad::onStart()
